@@ -4,7 +4,7 @@ name: 'macas-pipeline'
 on:
   push:
     branches:
-      - pipeline  # or the branch you want to monitor
+      - master  # or the branch you want to monitor
 
 
 permissions:
