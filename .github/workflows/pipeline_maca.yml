@@ -1,7 +1,7 @@
 
 name: 'macas-pipeline'
 
-on:
+on: #trigger, can be push, merge, workflow_dispatch(manually triggered by oneself)..
   push:
     branches:
       - master  # or the branch you want to monitor
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout repository # downloads and unzips our code in the operating system we've selected in "runs-on"
       uses: actions/checkout@v2
 
     - name: Set up Node.js environment
@@ -25,7 +25,7 @@ jobs:
       with:
         node-version: '20' # or another Node.js version you need
 
-    - name: Azure Login
+    - name: Azure Login #logs into Azure
       uses: azure/login@v1
       with:
         client-id: ${{ secrets.CLIENT_ID }}
