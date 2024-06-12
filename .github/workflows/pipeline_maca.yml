@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master  # or the branch you want to monitor
+  workflow_dispatch:
 
 
 permissions:
